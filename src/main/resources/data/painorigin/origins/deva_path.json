@@ -1,0 +1,27 @@
+{
+  "powers": [
+    "painorigin:chakra",
+    "painorigin:chakra_regen",
+    "painorigin:shinra_tensei",
+    "painorigin:shinra_tensei_massive",
+    "painorigin:bansho_tenin",
+    "painorigin:chibaku_tensei",
+    "painorigin:universal_defense",
+    "painorigin:defense_charges",
+    "painorigin:defense_regen",
+    "painorigin:rinnegan_gravity_field",
+    "painorigin:rinnegan_aura",
+    "painorigin:gravity_affinity",
+    "painorigin:frail_vessel",
+    "painorigin:notice_primary",
+    "painorigin:notice_secondary",
+    "painorigin:notice_target",
+    "painorigin:onboarding"
+  ],
+  "icon": {
+    "item": "minecraft:ender_eye"
+  },
+  "unchoosable": false,
+  "order": 20,
+  "impact": 3
+}

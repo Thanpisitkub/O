@@ -1,0 +1,42 @@
+{
+  "type": "apoli:action_over_time",
+  "interval": 5,
+  "entity_action": {
+    "type": "apoli:area_of_effect",
+    "radius": 6.0,
+    "shape": "sphere",
+    "include_target": false,
+    "bientity_condition": {
+      "type": "apoli:and",
+      "conditions": [
+        {
+          "type": "apoli:target_condition",
+          "condition": {
+            "type": "apoli:or",
+            "conditions": [
+              {
+                "type": "apoli:entity_type",
+                "entity_type": "minecraft:item"
+              },
+              {
+                "type": "apoli:entity_type",
+                "entity_type": "minecraft:experience_orb"
+              }
+            ]
+          }
+        },
+        {
+          "type": "apoli:distance",
+          "comparison": ">",
+          "compare_to": 1.2
+        }
+      ]
+    },
+    "bientity_action": {
+      "type": "apoli:add_velocity",
+      "x": 0.0,
+      "y": 0.03,
+      "z": -0.12
+    }
+  }
+}

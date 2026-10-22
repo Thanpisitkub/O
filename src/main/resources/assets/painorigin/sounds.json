@@ -1,0 +1,74 @@
+{
+  "shinra_tensei.charge": {
+    "subtitle": "subtitles.painorigin.shinra_tensei.charge",
+    "sounds": [
+      {
+        "name": "painorigin:charge",
+        "stream": false
+      }
+    ]
+  },
+  "shinra_tensei.release": {
+    "subtitle": "subtitles.painorigin.shinra_tensei.release",
+    "sounds": [
+      {
+        "name": "painorigin:shinra_tensei",
+        "stream": false
+      }
+    ]
+  },
+  "shinra_tensei.shockwave": {
+    "subtitle": "subtitles.painorigin.shinra_tensei.shockwave",
+    "sounds": [
+      {
+        "name": "painorigin:shockwave",
+        "stream": false
+      }
+    ]
+  },
+  "bansho_tenin.pull": {
+    "subtitle": "subtitles.painorigin.bansho_tenin.pull",
+    "sounds": [
+      {
+        "name": "painorigin:bansho_tenin",
+        "stream": false
+      }
+    ]
+  },
+  "chibaku_tensei.core": {
+    "subtitle": "subtitles.painorigin.chibaku_tensei.core",
+    "sounds": [
+      {
+        "name": "painorigin:chibaku_core",
+        "stream": false
+      }
+    ]
+  },
+  "chibaku_tensei.debris": {
+    "subtitle": "subtitles.painorigin.chibaku_tensei.debris",
+    "sounds": [
+      {
+        "name": "painorigin:chibaku_debris",
+        "stream": false
+      }
+    ]
+  },
+  "chibaku_tensei.collapse": {
+    "subtitle": "subtitles.painorigin.chibaku_tensei.collapse",
+    "sounds": [
+      {
+        "name": "painorigin:chibaku_collapse",
+        "stream": false
+      }
+    ]
+  },
+  "universal_defense.block": {
+    "subtitle": "subtitles.painorigin.universal_defense.block",
+    "sounds": [
+      {
+        "name": "painorigin:defense",
+        "stream": false
+      }
+    ]
+  }
+}

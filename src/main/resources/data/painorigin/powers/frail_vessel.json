@@ -1,0 +1,9 @@
+{
+  "type": "apoli:attribute",
+  "modifier": {
+    "name": "Frail vessel",
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": -4.0
+  }
+}

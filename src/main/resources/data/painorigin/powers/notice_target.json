@@ -1,0 +1,69 @@
+{
+  "type": "apoli:active_self",
+  "key": {
+    "key": "key.origins.secondary_active",
+    "continuous": false
+  },
+  "cooldown": 30,
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:sneaking",
+        "inverted": true
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "painorigin:chakra",
+        "comparison": ">=",
+        "compare_to": 8
+      },
+      {
+        "type": "apoli:raycast",
+        "distance": 32.0,
+        "block": true,
+        "entity": true,
+        "shape_type": "collider",
+        "fluid_handling": "none",
+        "match_bientity_condition": {
+          "type": "apoli:target_condition",
+          "condition": {
+            "type": "apoli:and",
+            "conditions": [
+              {
+                "type": "apoli:living"
+              },
+              {
+                "type": "apoli:gamemode",
+                "gamemode": "spectator",
+                "inverted": true
+              }
+            ]
+          }
+        },
+        "hit_bientity_condition": {
+          "type": "apoli:target_condition",
+          "condition": {
+            "type": "apoli:and",
+            "conditions": [
+              {
+                "type": "apoli:living"
+              },
+              {
+                "type": "apoli:gamemode",
+                "gamemode": "spectator",
+                "inverted": true
+              }
+            ]
+          }
+        },
+        "inverted": true
+      }
+    ]
+  },
+  "entity_action": {
+    "type": "apoli:execute_command",
+    "command": "title @s actionbar {\"translate\":\"painorigin.notice.no_target\",\"color\":\"yellow\"}"
+  },
+  "hidden": true
+}

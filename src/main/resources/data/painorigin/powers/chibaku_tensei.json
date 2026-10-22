@@ -1,0 +1,41 @@
+{
+  "type": "apoli:active_self",
+  "key": {
+    "key": "key.origins.secondary_active",
+    "continuous": false
+  },
+  "cooldown": 3600,
+  "hud_render": {
+    "should_render": true,
+    "bar_index": 3,
+    "sprite_location": "painorigin:textures/gui/resource_bar.png"
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:sneaking"
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "painorigin:chakra",
+        "comparison": ">=",
+        "compare_to": 80
+      }
+    ]
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:change_resource",
+        "resource": "painorigin:chakra",
+        "change": -80
+      },
+      {
+        "type": "apoli:execute_command",
+        "command": "painorigin chibaku start"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "type": "apoli:active_self",
+  "key": {
+    "key": "key.origins.secondary_active",
+    "continuous": false
+  },
+  "cooldown": 30,
+  "condition": {
+    "type": "apoli:or",
+    "conditions": [
+      {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:sneaking",
+            "inverted": true
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "painorigin:chakra",
+            "comparison": "<",
+            "compare_to": 8
+          }
+        ]
+      },
+      {
+        "type": "apoli:and",
+        "conditions": [
+          {
+            "type": "apoli:sneaking"
+          },
+          {
+            "type": "apoli:resource",
+            "resource": "painorigin:chakra",
+            "comparison": "<",
+            "compare_to": 80
+          }
+        ]
+      }
+    ]
+  },
+  "entity_action": {
+    "type": "apoli:execute_command",
+    "command": "title @s actionbar {\"translate\":\"painorigin.notice.low_chakra\",\"color\":\"light_purple\"}"
+  },
+  "hidden": true
+}

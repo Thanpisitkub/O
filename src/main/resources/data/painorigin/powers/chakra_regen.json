@@ -1,0 +1,10 @@
+{
+  "type": "apoli:action_over_time",
+  "interval": 10,
+  "entity_action": {
+    "type": "apoli:change_resource",
+    "resource": "painorigin:chakra",
+    "change": 1
+  },
+  "hidden": true
+}

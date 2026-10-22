@@ -1,0 +1,7 @@
+{
+  "type": "apoli:modify_falling",
+  "modifier": {
+    "operation": "multiply_total_multiplicative",
+    "value": -0.25
+  }
+}

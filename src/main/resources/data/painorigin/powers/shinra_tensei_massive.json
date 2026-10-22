@@ -1,0 +1,132 @@
+{
+  "type": "apoli:active_self",
+  "key": {
+    "key": "key.origins.primary_active",
+    "continuous": false
+  },
+  "cooldown": 1200,
+  "hud_render": {
+    "should_render": true,
+    "bar_index": 4,
+    "sprite_location": "painorigin:textures/gui/resource_bar.png"
+  },
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:sneaking"
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "painorigin:chakra",
+        "comparison": ">=",
+        "compare_to": 40
+      }
+    ]
+  },
+  "entity_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:change_resource",
+        "resource": "painorigin:chakra",
+        "change": -40
+      },
+      {
+        "type": "apoli:play_sound",
+        "sound": "painorigin:shinra_tensei.charge",
+        "volume": 3.0,
+        "pitch": 1.0
+      },
+      {
+        "type": "apoli:execute_command",
+        "command": "painorigin fx charge 30"
+      },
+      {
+        "type": "apoli:delay",
+        "ticks": 30,
+        "action": {
+          "type": "apoli:if_else",
+          "condition": {
+            "type": "apoli:and",
+            "conditions": [
+              {
+                "type": "apoli:health",
+                "comparison": ">",
+                "compare_to": 0.0
+              },
+              {
+                "type": "apoli:power",
+                "power": "painorigin:shinra_tensei_massive"
+              }
+            ]
+          },
+          "if_action": {
+            "type": "apoli:and",
+            "actions": [
+              {
+                "type": "apoli:play_sound",
+                "sound": "painorigin:shinra_tensei.release",
+                "volume": 5.0,
+                "pitch": 0.7
+              },
+              {
+                "type": "apoli:play_sound",
+                "sound": "painorigin:shinra_tensei.shockwave",
+                "volume": 4.0,
+                "pitch": 0.7
+              },
+              {
+                "type": "apoli:area_of_effect",
+                "radius": 24.0,
+                "shape": "sphere",
+                "include_target": false,
+                "bientity_condition": {
+                  "type": "apoli:and",
+                  "conditions": [
+                    {
+                      "type": "apoli:owner",
+                      "inverted": true
+                    },
+                    {
+                      "type": "apoli:target_condition",
+                      "condition": {
+                        "type": "apoli:gamemode",
+                        "gamemode": "spectator",
+                        "inverted": true
+                      }
+                    }
+                  ]
+                },
+                "bientity_action": {
+                  "type": "apoli:and",
+                  "actions": [
+                    {
+                      "type": "apoli:add_velocity",
+                      "x": 0.0,
+                      "y": 0.9,
+                      "z": 3.2
+                    },
+                    {
+                      "type": "apoli:damage",
+                      "amount": 12.0,
+                      "damage_type": "painorigin:shinra_tensei"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "apoli:execute_command",
+                "command": "painorigin fx shinra_massive 24"
+              },
+              {
+                "type": "apoli:execute_command",
+                "command": "painorigin massive_blocks 24"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

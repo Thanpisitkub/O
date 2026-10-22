@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:bedrock",
+    "minecraft:barrier",
+    "minecraft:light",
+    "minecraft:structure_void",
+    "minecraft:structure_block",
+    "minecraft:jigsaw",
+    "minecraft:command_block",
+    "minecraft:chain_command_block",
+    "minecraft:repeating_command_block",
+    "minecraft:end_portal_frame",
+    "minecraft:end_portal",
+    "minecraft:end_gateway",
+    "minecraft:nether_portal",
+    "minecraft:spawner",
+    "minecraft:reinforced_deepslate",
+    {
+      "id": "#minecraft:wither_immune",
+      "required": false
+    },
+    {
+      "id": "#minecraft:dragon_immune",
+      "required": false
+    }
+  ]
+}

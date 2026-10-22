@@ -1,0 +1,94 @@
+{
+  "type": "apoli:modify_damage_taken",
+  "condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:resource",
+        "resource": "painorigin:defense_charges",
+        "comparison": ">=",
+        "compare_to": 1
+      },
+      {
+        "type": "apoli:resource",
+        "resource": "painorigin:chakra",
+        "comparison": ">=",
+        "compare_to": 5
+      }
+    ]
+  },
+  "damage_condition": {
+    "type": "apoli:and",
+    "conditions": [
+      {
+        "type": "apoli:out_of_world",
+        "inverted": true
+      },
+      {
+        "type": "apoli:amount",
+        "comparison": ">",
+        "compare_to": 0.0
+      },
+      {
+        "type": "apoli:or",
+        "conditions": [
+          {
+            "type": "apoli:projectile"
+          },
+          {
+            "type": "apoli:explosive"
+          },
+          {
+            "type": "apoli:attacker"
+          }
+        ]
+      }
+    ]
+  },
+  "modifier": {
+    "operation": "multiply_total_multiplicative",
+    "value": -1.0
+  },
+  "self_action": {
+    "type": "apoli:and",
+    "actions": [
+      {
+        "type": "apoli:change_resource",
+        "resource": "painorigin:defense_charges",
+        "change": -1
+      },
+      {
+        "type": "apoli:change_resource",
+        "resource": "painorigin:chakra",
+        "change": -5
+      },
+      {
+        "type": "apoli:play_sound",
+        "sound": "painorigin:universal_defense.block",
+        "volume": 1.5,
+        "pitch": 1.0
+      },
+      {
+        "type": "apoli:execute_command",
+        "command": "painorigin fx defense"
+      }
+    ]
+  },
+  "bientity_action": {
+    "type": "apoli:invert",
+    "action": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "apoli:distance",
+        "comparison": "<=",
+        "compare_to": 5.0
+      },
+      "if_action": {
+        "type": "apoli:add_velocity",
+        "x": 0.0,
+        "y": 0.4,
+        "z": 1.4
+      }
+    }
+  }
+}
